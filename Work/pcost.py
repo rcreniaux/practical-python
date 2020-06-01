@@ -3,10 +3,7 @@
 # Exercise 1.27
 
 def portfolio_cost(filename):
-    try:
-        f = open(filename, 'rt')
-    except FileNotFoundError:
-        print(filename, 'can\'t be found, please provide a valid file')
+    f = open(filename, 'rt')
     next(f).split(',')
 
     totalAmount = 0
