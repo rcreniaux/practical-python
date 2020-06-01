@@ -1,14 +1,16 @@
 # pcost.py
 #
 # Exercise 1.27
+import csv
 
 def portfolio_cost(filename):
-    f = open(filename, 'rt')
-    next(f).split(',')
+    f = open(filename)
+    rows = csv.reader(f)
+    # skipping headers
+    next(rows)
 
     totalAmount = 0
-    for line in f:
-        row = line.split(',')
+    for row in rows:
         try:
             totalAmount = totalAmount + (int(row[1]) * float(row[2]))
         except ValueError:
